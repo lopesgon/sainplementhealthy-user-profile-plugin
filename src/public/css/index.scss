@@ -1,0 +1,11 @@
+// Only imports here, no actual styles
+
+@import "./variables";
+@import "./add-favorite";
+@import "./favorites";
+
+:root {
+  --shupp-color: #f39521;
+  --shupp-icon-default: #181818;
+  --shupp-icon-liked: #F44336;
+}
