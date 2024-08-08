@@ -49,7 +49,7 @@ export default class FavoriteService {
     });
   }
 
-  private toggleFavoriteFromStorage(favorite: FavoriteModel): boolean {
+  public static toggleFavoriteFromStorage(favorite: FavoriteModel): boolean {
     let values = LocalStorageService.getItem<FavoriteModel[]>(FavoriteService.key);
     if (!values) {
       values = [];
@@ -68,7 +68,7 @@ export default class FavoriteService {
   }
 
   toggleFavoriteCallback = (value: FavoriteModel) => {
-    const isAdded = this.toggleFavoriteFromStorage(value);
+    const isAdded = FavoriteService.toggleFavoriteFromStorage(value);
     this.toggleFavorites(isAdded);
   }
 }

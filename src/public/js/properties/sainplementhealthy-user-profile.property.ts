@@ -1,16 +1,13 @@
 declare var sainplementhealthy_user_profile_plugin_public_properties: {
-  exampleBoolean: boolean,
-  pluginName: string
+  pluginUrl: string,
 }
 
 interface ISainplementhealthyUserProfileProperties {
-  showCookieDescription: boolean,
-  getPluginName: string,
+  getPluginUrl: string,
 }
 
 const cookiesMadeSimpleProperties: ISainplementhealthyUserProfileProperties = {
-  showCookieDescription: sainplementhealthy_user_profile_plugin_public_properties.exampleBoolean,
-  getPluginName: sainplementhealthy_user_profile_plugin_public_properties.pluginName,
+  getPluginUrl: sainplementhealthy_user_profile_plugin_public_properties.pluginUrl,
 }
 
 export { cookiesMadeSimpleProperties }

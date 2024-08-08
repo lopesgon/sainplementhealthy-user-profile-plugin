@@ -13,17 +13,13 @@ class Sainplh_User_Profile_Core
 
   private function __construct()
   {
-    if (defined('SHUPP_VERSION')) {
-      $this->version = SHUPP_VERSION;
-    } else {
-      $this->version = '0.0.0';
-    }
+    defined('SHUPP_VERSION') ?
+      $this->version = SHUPP_VERSION
+      : $this->version = '0.0.0-' . time();
 
-    if (defined('SHUPP_PLUGIN_NAME')) {
-      $this->plugin_name = SHUPP_PLUGIN_NAME;
-    } else {
-      $this->plugin_name = 'undefined_sainplh-user-profile';
-    }
+    defined('SHUPP_PLUGIN_NAME') ?
+      $this->plugin_name = SHUPP_PLUGIN_NAME
+      : $this->plugin_name = 'undefined_sainplh-user-profile';
 
     $this->load_dependencies();
     // $this->set_locale();

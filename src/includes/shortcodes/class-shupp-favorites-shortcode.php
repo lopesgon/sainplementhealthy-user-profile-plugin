@@ -32,17 +32,15 @@ class Shupp_Favorites_Shortcode
   {
     $atts = shortcode_atts([
       'title' => 'Mes favoris',
-      'show_count' => true,
-      'show_thumbnails' => true,
-      'show_price' => true,
-      'show_excerpt' => true
+      'before_title' => '<h3 class="shupp-favorites-title">',
+      'after_title' => '</h3>',
     ], $atts);
 
     extract($atts);
 
     ob_start();
 
-    echo "<div id='shupp-favorites'>{$title}</div>";
+    echo "<div id='shupp-favorites'>{$before_title}{$title}{$after_title}</div>";
 
     return ob_get_clean();
   }

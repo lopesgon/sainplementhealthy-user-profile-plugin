@@ -6,15 +6,10 @@ $defaultPosition: calc($defaultSize / 2);
 .shupp-add-favorite-button {
   height: inherit;
   width: inherit;
-  // transition: transform 300ms ease-in-out;
 
   &:hover {
     cursor: pointer;
   }
-
-  // &:active {
-  //   transform: scale(1.1);
-  // }
 
   &.liked {
     svg {
@@ -24,6 +19,8 @@ $defaultPosition: calc($defaultSize / 2);
   }
 
   svg {
+    width: inherit;
+    height: inherit;
     stroke: var(--shupp-icon-default);
     fill: none;
   }

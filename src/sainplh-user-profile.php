@@ -41,7 +41,7 @@ class Sainplh_User_Profile_Root
   {
     defined('SHUPP_VERSION') ?
       $this->version = SHUPP_VERSION
-      : $this->version = '0.0.0';
+      : $this->version = '0.0.0-' . time();
 
     defined('SHUPP_PLUGIN_NAME') ?
       $this->plugin_name = SHUPP_PLUGIN_NAME

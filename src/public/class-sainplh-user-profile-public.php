@@ -38,9 +38,9 @@ class Sainplh_User_Profile_Public
     // Scripts
     $this->loader->add_action('wp_enqueue_scripts', $this, 'enqueue_styles');
     $this->loader->add_action('wp_enqueue_scripts', $this, 'enqueue_scripts');
-    $this->loader->add_action('wp_enqueue_scripts', $this, 'add_inline_scripts');
 
-    $this->loader->add_action('wp_footer', $this, 'default_display');
+    $this->loader->add_action('wp_enqueue_scripts', $this, 'add_inline_scripts');
+    // $this->loader->add_action('wp_footer', $this, 'default_display');
   }
 
   public function enqueue_styles()
@@ -62,8 +62,7 @@ class Sainplh_User_Profile_Public
     wp_add_inline_script($this->plugin_name, 'const sainplementhealthy_user_profile_plugin_public_properties = ' . json_encode(
       [
         // 'admin_ajax' => esc_js(get_rest_url(null, '/cookies-made-simple-plugin/v1/')),
-        'booleanExample' => $booleanExample,
-        'pluginName' => $pluginName,
+        'pluginUrl' => SHUPP_PLUGIN_ROOT_URL,
       ]
     ), 'before');
   }
@@ -74,7 +73,7 @@ class Sainplh_User_Profile_Public
   public function default_display()
   {
     ?>
-    <div id="shuppRoot">
+    <div id="shupp-root">
       <?php
       include_once plugin_dir_path(__FILE__) . 'partials/header.php';
       include_once plugin_dir_path(__FILE__) . 'partials/content.php';
