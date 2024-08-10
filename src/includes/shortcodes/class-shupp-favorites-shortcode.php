@@ -40,7 +40,10 @@ class Shupp_Favorites_Shortcode
 
     ob_start();
 
-    echo "<div id='shupp-favorites'>{$before_title}{$title}{$after_title}</div>";
+    echo "<div id='shupp-favorites-root'>
+      {$before_title}{$title}{$after_title}
+      <div id='shupp-favorites'></div>
+    </div>";
 
     return ob_get_clean();
   }
