@@ -31,9 +31,8 @@ class Shupp_Add_Favorite_Shortcode
   public function render_shortcode($atts)
   {
     $atts = shortcode_atts([
-      'icon' => 'Mes favoris',
-      // 'favorite_icon' => plugins_url('assets/hearth-red.svg'),
       'favorite_icon_path' => SHUPP_PLUGIN_ROOT_PATH . 'public/assets/like.svg',
+      'classes' => ''
     ], $atts);
 
     extract($atts);
@@ -46,7 +45,8 @@ class Shupp_Add_Favorite_Shortcode
     $thumbnail_url = esc_url(get_the_post_thumbnail_url($post, 'post-thumbnail'));
 
     // <img src='" . esc_url($favorite_icon) . "'>
-    $result = "<div class='shupp-add-favorite-button'
+    $esc_classes = esc_attr($classes);
+    $result = "<div class='shupp-add-favorite-button {$esc_classes}'
       data-post-id='{$post_id}'
       data-title='{$title}'
       data-url='{$url}'

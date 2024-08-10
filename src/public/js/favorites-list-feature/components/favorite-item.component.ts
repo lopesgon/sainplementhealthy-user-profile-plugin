@@ -1,5 +1,4 @@
-import { FavoriteModel } from "../models/favorite";
-import { cookiesMadeSimpleProperties } from "../properties/sainplementhealthy-user-profile.property";
+import { FavoriteModel } from "../../core/models/favorite";
 
 export default class FavoriteItemElement {
 
