@@ -2,9 +2,17 @@
 
 @import "./variables";
 @import "./add-favorite";
-@import "./favorites";
+@import "./favorites-list";
 
 :root {
-  --shupp-icon-default: #181818;
-  --shupp-icon-liked: #F44336;
+  --shupp-icon-stroke-width: 1;
+
+  --shupp-like-icon-stroke: #181818;
+  --shupp-like-icon-fill: rgb(255 255 255 / 80%);
+  --shupp-liked-icon-stroke: #F44336;
+  --shupp-liked-icon-fill: var(--shupp-liked-icon-stroke);
+
+  --shupp-favorite-icon-color: #fff;
+  --shupp-favorite-icon-drop-shadow: drop-shadow(2px 3px 3px rgb(0 0 0 / 0.8));
+  --shupp-favorite-icon-fill: rgb(255 255 255 / .3);
 }

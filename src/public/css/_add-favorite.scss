@@ -13,15 +13,16 @@ $defaultPosition: calc($defaultSize / 2);
 
   &.liked {
     svg {
-      stroke: var(--shupp-icon-liked);
-      fill: var(--shupp-icon-liked);
+      stroke: var(--shupp-liked-icon-stroke);
+      fill: var(--shupp-liked-icon-fill);
     }
   }
 
   svg {
     width: inherit;
     height: inherit;
-    stroke: var(--shupp-icon-default);
-    fill: none;
+    stroke: var(--shupp-like-icon-stroke);
+    stroke-width: var(--shupp-icon-stroke-width);
+    fill: var(--shupp-like-icon-fill);
   }
 }

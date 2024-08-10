@@ -1,0 +1,88 @@
+#shupp-favorites {
+
+  .shupp-favorites-title {
+    // Nothing here yet
+  }
+
+  div.shupp-favorite-item-container {
+    position: relative;
+    margin: 12px 0;
+
+    a.shupp-favorite-item {
+      position: relative;
+      border-radius: 10px;
+      display: block;
+      overflow: hidden;
+      max-height: 150px;
+
+      .shupp-favorite-item-title {
+        color: var(--shupp-favorite-icon-color);
+        position: absolute;
+        z-index: 1;
+        top: 8px;
+        left: 12px;
+        filter: var(--shupp-favorite-icon-drop-shadow);
+      }
+
+      img.shupp-favorite-item-image {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+
+        transition: transform 200ms ease-in-out;
+      }
+
+      &:hover {
+        img.shupp-favorite-item-image {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .shupp-favorite-item-delete {
+      position: absolute;
+      z-index: 2;
+      height: 40px;
+      right: 0;
+      bottom: 0;
+      margin: 12px;
+
+      @keyframes hoverMovement {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        40% {
+          transform: rotate(10deg);
+        }
+
+        80% {
+          transform: rotate(-10deg);
+        }
+
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+        animation-name: hoverMovement;
+        animation-duration: .5s;
+      }
+
+      svg {
+        width: inherit;
+        height: inherit;
+        filter: var(--shupp-favorite-icon-drop-shadow);
+        fill: var(--shupp-favorite-icon-fill);
+
+        path {
+          stroke: var(--shupp-favorite-icon-color);
+          stroke-width: var(--shupp-icon-stroke-width);
+        }
+      }
+    }
+  }
+}
