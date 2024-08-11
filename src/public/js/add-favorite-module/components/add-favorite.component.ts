@@ -1,13 +1,14 @@
 import { FavoriteModel } from "../../core/models/favorite";
+import FavoriteService from "../../core/services/favorite.service";
+import FavoriteEntitiesStore from "../../core/states/favorite-entities.store";
 
 export default class AddFavoriteComponent {
   private static likedClass = 'liked';
 
   favoriteElement: HTMLDivElement;
-  clickCallback: (value: FavoriteModel) => void;
   favorite: FavoriteModel;
 
-  constructor(favoriteElement: Element, clickCallback: (value: FavoriteModel) => void) {
+  constructor(favoriteElement: Element) {
     if (!(favoriteElement instanceof HTMLDivElement)) {
       throw new Error('Element is not a div and cannot be instanciated.');
     }
@@ -20,24 +21,24 @@ export default class AddFavoriteComponent {
 
     this.favoriteElement = favoriteElement;
     this.favorite = { id: postId, title: title, url: url, thumbnail: thumbnail };
-    this.clickCallback = clickCallback;
     this.registerListeners();
   }
 
   private registerListeners() {
-    this.favoriteElement.addEventListener('click', () => this.clickCallback(this.favorite));
-  }
+    this.favoriteElement.addEventListener('click', () => FavoriteService.toggleFavoriteFromStorage(this.favorite));
 
-  public getId() {
-    return this.favorite.id;
+    FavoriteEntitiesStore.subscribe((favorites: FavoriteModel[]) => {
+      if (favorites.some(({ id }) => id === this.favorite.id)) {
+        this.addLike();
+      } else {
+        this.removeLike();
+      }
+    });
   }
-  public addLike() {
+  private addLike() {
     this.favoriteElement.classList.add(AddFavoriteComponent.likedClass);
   }
-  public removeLike() {
+  private removeLike() {
     this.favoriteElement.classList.remove(AddFavoriteComponent.likedClass);
-  }
-  public toggleLike(added: boolean) {
-    added ? this.addLike() : this.removeLike();
   }
 }

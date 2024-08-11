@@ -1,4 +1,5 @@
 import { FavoriteModel } from "../../core/models/favorite";
+import FavoriteService from "../../core/services/favorite.service";
 
 export default class FavoriteItemElement {
 
@@ -12,7 +13,6 @@ export default class FavoriteItemElement {
     </svg>`;
 
   favorite: FavoriteModel;
-  deleteCallback: (favorite: FavoriteModel) => void;
 
   private favoriteElement: HTMLDivElement;
   private anchorElement: HTMLAnchorElement;
@@ -20,11 +20,8 @@ export default class FavoriteItemElement {
   private titleElement: HTMLHeadingElement;
 
 
-
-  constructor(favorite: FavoriteModel, deleteCallback: (favorite: FavoriteModel) => void) {
-
+  constructor(favorite: FavoriteModel) {
     this.favorite = favorite;
-    this.deleteCallback = deleteCallback;
 
     this.favoriteElement = document.createElement('div');
     this.favoriteElement.classList.add('shupp-favorite-item-container');
@@ -60,7 +57,6 @@ export default class FavoriteItemElement {
   }
 
   private delete() {
-    this.deleteCallback(this.favorite);
-    this.favoriteElement.remove();
+    FavoriteService.removeFavorite(this.favorite.id);
   }
 }

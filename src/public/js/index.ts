@@ -1,5 +1,5 @@
-import AddFavoriteModule from "./add-favorite-feature/add-favorite.module";
-import FavoritesListModule from "./favorites-list-feature/favorites-list.module";
+import AddFavoriteModule from "./add-favorite-module/add-favorite.module";
+import FavoritesListModule from "./favorites-list-module/favorites-list.module";
 import DOMReadiness from "./shared/DOMReadiness";
 
 if (process.env.NODE_ENV !== 'production') {
@@ -7,6 +7,6 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 DOMReadiness(() => {
-  AddFavoriteModule().init;
-  FavoritesListModule().init;
+  AddFavoriteModule.init();
+  FavoritesListModule.init();
 });

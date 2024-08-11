@@ -10,8 +10,8 @@ const FavoritesListModule = () => {
   }
 
   return {
-    init: initialize()
+    init: initialize
   }
 }
 
-export default FavoritesListModule;
+export default FavoritesListModule();
