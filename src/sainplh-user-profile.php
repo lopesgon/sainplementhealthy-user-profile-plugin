@@ -8,7 +8,7 @@ defined('ABSPATH') || exit;
  * Plugin Name:       SainplementHealthy - User Profile
  * Plugin URI:        https://github.com/lopesgon/sainplh-user-profile
  * Description:       A plugin to add user related features to the SainplementHealthy website.
- * Version:           1.0.0
+ * Version:          .1.1.0
  * Author:            lopesgon
  * Author URI:        https://github.com/lopesgon/sainplh-user-profile
  * License:           GPL-3.0+
@@ -24,7 +24,7 @@ if (is_array($result)) {
   }
 }
 
-define('SHUPP_VERSION', '1.0.0');
+define('SHUPP_VERSION', .1.1.0');
 define('SHUPP_PLUGIN_NAME', 'sainplh-user-profile');
 define('SHUPP_DEV_MODE', __SHUPP_DEV_MODE__);
 define('SHUPP_PLUGIN_ROOT_URL', plugin_dir_url(__FILE__));
