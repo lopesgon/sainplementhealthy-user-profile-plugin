@@ -63,6 +63,7 @@ class Sainplh_User_Profile_Core
 
 
     require 'shortcodes/index.php';
+    // require 'widgets/class-shupp-favorite-list-widget.php';
 
     $this->loader = new Sainplh_User_Profile_Loader();
   }

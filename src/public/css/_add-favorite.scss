@@ -6,6 +6,7 @@ $defaultPosition: calc($defaultSize / 2);
 .shupp-add-favorite-button {
   height: inherit;
   width: inherit;
+  user-select: none;
 
   &:hover {
     cursor: pointer;

@@ -31,7 +31,7 @@ class Shupp_Favorites_Shortcode
   public function render_shortcode($atts)
   {
     $atts = shortcode_atts([
-      'title' => 'Mes favoris',
+      'title' => '',
       'before_title' => '<h3 class="shupp-favorites-title">',
       'after_title' => '</h3>',
     ], $atts);
