@@ -19,10 +19,10 @@ case "$1" in
 esac
 
 # CONSTANTS
-versionFile="src/cookies-made-simple.php"
+versionFile="src/sainplh-user-profile.php"
 # Set the name of the directory and destination folder
 dir_to_tar="dist"
-dir_to_tar_renamed="cookies-made-simple"
+dir_to_tar_renamed="sainplh-user-profile"
 tarball_dir="releases"
 # Options default
 dryRun=0
