@@ -1,9 +1,8 @@
 #shupp-favorites-root {
   #shupp-favorites {
-    display: flex;
-    gap: 12px;
-    flex-flow: row wrap;
-    text-wrap: balance;
+    display: grid;
+    grid-gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
 
     .shupp-favorites-title {
       // Nothing here yet
@@ -11,8 +10,6 @@
 
     div.shupp-favorite-item-container {
       position: relative;
-      min-width: 300px;
-      flex: 1;
 
       a.shupp-favorite-item {
         position: relative;
@@ -91,6 +88,14 @@
           }
         }
       }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #shupp-favorites-root {
+    #shupp-favorites {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 }
