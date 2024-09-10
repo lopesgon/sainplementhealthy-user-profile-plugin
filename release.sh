@@ -24,6 +24,7 @@ versionFile="src/sainplh-user-profile.php"
 dir_to_tar="dist"
 dir_to_tar_renamed="sainplh-user-profile"
 tarball_dir="releases"
+tarball_prefix="shupp-plugin"
 # Options default
 dryRun=0
 release="patch"
@@ -143,6 +144,9 @@ fi
 
 # Create the tarball directory if it does not exist
 mkdir -p "$tarball_dir"
+
+# Prepare newTag with filename prefix
+newTag="$tarball_prefix-$newTag"
 
 if [ "$dryRun" -eq "1" ]; then
   newTag="$newTag-dryRun"
