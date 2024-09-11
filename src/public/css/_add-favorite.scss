@@ -3,14 +3,13 @@
 $defaultSize: 40px;
 $defaultPosition: calc($defaultSize / 2);
 
-.shupp-add-favorite-button {
+button.shupp-add-favorite-btn {
   height: inherit;
   width: inherit;
   user-select: none;
-
-  &:hover {
-    cursor: pointer;
-  }
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 
   &.liked {
     svg {

@@ -1,7 +1,7 @@
 import AddFavoriteComponent from "./components/add-favorite.component";
 
 const AddFavoriteModule = () => {
-  const addFavoriteSelector = '.shupp-add-favorite-button';
+  const addFavoriteSelector = 'button.shupp-add-favorite-btn';
   const addFavoriteComponents: AddFavoriteComponent[] = [];
 
   const initialize = () => {

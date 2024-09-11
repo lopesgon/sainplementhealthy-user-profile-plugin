@@ -5,11 +5,11 @@ import FavoriteEntitiesStore from "../../core/states/favorite-entities.store";
 export default class AddFavoriteComponent {
   private static likedClass = 'liked';
 
-  favoriteElement: HTMLDivElement;
+  favoriteElement: HTMLButtonElement;
   favorite: FavoriteModel;
 
   constructor(favoriteElement: Element) {
-    if (!(favoriteElement instanceof HTMLDivElement)) {
+    if (!(favoriteElement instanceof HTMLButtonElement)) {
       throw new Error('Element is not a div and cannot be instanciated.');
     }
 

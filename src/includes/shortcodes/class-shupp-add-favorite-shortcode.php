@@ -46,7 +46,7 @@ class Shupp_Add_Favorite_Shortcode
 
     // <img src='" . esc_url($favorite_icon) . "'>
     $esc_classes = esc_attr($classes);
-    $result = "<div class='shupp-add-favorite-button {$esc_classes}'
+    $result = "<button class='shupp-add-favorite-btn {$esc_classes}'
       data-post-id='{$post_id}'
       data-title='{$title}'
       data-url='{$url}'
@@ -58,7 +58,7 @@ class Shupp_Add_Favorite_Shortcode
     } else {
       $result .= 'SVG file not found.';
     }
-    $result .= "</div>";
+    $result .= "</button>";
 
     ob_start();
     echo $result;
